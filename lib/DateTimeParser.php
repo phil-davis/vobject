@@ -54,11 +54,7 @@ class DateTimeParser
      *
      * @throws InvalidDataException
      */
-<<<<<<< HEAD
     public static function parseDate(string $date, ?\DateTimeZone $tz = null): \DateTimeImmutable
-=======
-    public static function parseDate($date, ?DateTimeZone $tz = null)
->>>>>>> 0795cd7... Fix `Implicitly marking parameter $param as nullable is deprecated`
     {
         // Format is YYYYMMDD
         $result = preg_match('/^([0-9]{4})([0-1][0-9])([0-3][0-9])$/', $date, $matches);
