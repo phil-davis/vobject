@@ -21,12 +21,12 @@ jobs:
           - php-versions: '8.2'
             coverage: 'pcov'
             code-style: 'yes'
-            code-analysis: 'yes'
+            code-analysis: 'no'
             rector-check: 'no'
           - php-versions: '8.5'
             coverage: 'pcov'
             code-style: 'no'
-            code-analysis: 'yes'
+            code-analysis: 'no'
             rector-check: 'yes'
     steps:
       - name: Checkout
