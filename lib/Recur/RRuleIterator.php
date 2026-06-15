@@ -806,7 +806,7 @@ class RRuleIterator implements \Iterator
                 case 'BYDAY':
                     $value = (array) $value;
                     foreach ($value as $part) {
-                        if (!preg_match('#^  (-|\+)? ([1-5])? (MO|TU|WE|TH|FR|SA|SU) $# xi', (string) $part)) {
+                        if (!preg_match('#^  (-|\+)? ([1-5])? (MO|TU|WE|TH|FR|SA|SU) $#xi', (string) $part)) {
                             throw new InvalidDataException('Invalid part in BYDAY clause: '.$part);
                         }
                     }
@@ -946,7 +946,7 @@ class RRuleIterator implements \Iterator
                     $byMonthDayResults[] = $monthDay;
                 } else {
                     // Negative values
-                    $byMonthDayResults[] = $startDate->format('t') + 1 + $monthDay;
+                    $byMonthDayResults[] = (int) $startDate->format('t') + 1 + $monthDay;
                 }
             }
         }
