@@ -7,9 +7,7 @@ use Sabre\VObject\Reader;
 
 class VJournalTest extends TestCase
 {
-    /**
-     * @dataProvider timeRangeTestData
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('timeRangeTestData')]
     public function testInTimeRange(VJournal $vtodo, \DateTime $start, \DateTime $end, bool $outcome): void
     {
         self::assertEquals($outcome, $vtodo->isInTimeRange($start, $end));

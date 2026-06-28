@@ -280,9 +280,7 @@ VCF;
         ];
     }
 
-    /**
-     * @dataProvider provideFormats
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideFormats')]
     public function testConvertDefaultFormats($inputFilename, $outputFilename, $format): void
     {
         $triggeredWarning = null;

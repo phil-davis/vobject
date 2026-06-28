@@ -11,9 +11,8 @@ class FindFromTimezoneMapTest extends TestCase
     /**
      * Verify that previously-deprecated IANA names have been replaced with
      * their canonical successors and resolve correctly.
-     *
-     * @dataProvider updatedTimezoneProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('updatedTimezoneProvider')]
     public function testUpdatedTimezonesResolve(string $mapKey, string $expectedOlson): void
     {
         $finder = new FindFromTimezoneMap();

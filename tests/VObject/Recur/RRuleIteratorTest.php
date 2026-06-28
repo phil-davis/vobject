@@ -29,9 +29,7 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider dst2HourlyTransitionProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dst2HourlyTransitionProvider')]
     public function test2HourlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -87,9 +85,7 @@ class RRuleIteratorTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider dst6HourlyTransitionProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dst6HourlyTransitionProvider')]
     public function testHourlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -278,9 +274,7 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider dstDailyTransitionProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dstDailyTransitionProvider')]
     public function testDailyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -485,9 +479,7 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider dstWeeklyTransitionProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dstWeeklyTransitionProvider')]
     public function testWeeklyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -737,9 +729,7 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider dstMonthlyTransitionProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dstMonthlyTransitionProvider')]
     public function testMonthlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -1146,9 +1136,7 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider dstYearlyTransitionProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dstYearlyTransitionProvider')]
     public function testYearlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -1419,9 +1407,8 @@ class RRuleIteratorTest extends TestCase
     /**
      * This caused an incorrect date to be returned by the rule iterator when
      * start date was not on the rrule list.
-     *
-     * @dataProvider yearlyStartDateNotOnRRuleListProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('yearlyStartDateNotOnRRuleListProvider')]
     public function testYearlyStartDateNotOnRRuleList(string $rule, string $start, array $expected): void
     {
         $this->parse($rule, $start, $expected);

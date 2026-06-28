@@ -7,9 +7,7 @@ use Sabre\VObject;
 
 class VCardTest extends TestCase
 {
-    /**
-     * @dataProvider validateData
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('validateData')]
     public function testValidate(string $input, array $expectedWarnings, string $expectedRepairedOutput): void
     {
         $vcard = VObject\Reader::read($input);

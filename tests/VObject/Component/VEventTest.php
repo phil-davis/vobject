@@ -6,9 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class VEventTest extends TestCase
 {
-    /**
-     * @dataProvider timeRangeTestData
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('timeRangeTestData')]
     public function testInTimeRange(VEvent $vevent, \DateTime $start, \DateTime $end, bool $outcome): void
     {
         self::assertEquals($outcome, $vevent->isInTimeRange($start, $end));

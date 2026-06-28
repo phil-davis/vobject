@@ -458,9 +458,7 @@ class ComponentTest extends TestCase
         $comp->remove($prop);
     }
 
-    /**
-     * @dataProvider ruleData
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('ruleData')]
     public function testValidateRules(array $componentList, int $errorCount): void
     {
         $vcard = new VCard();

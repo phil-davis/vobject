@@ -6,9 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class CalAddressTest extends TestCase
 {
-    /**
-     * @dataProvider values
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('values')]
     public function testGetNormalizedValue(string $expected, string $input): void
     {
         $vobj = new \Sabre\VObject\Component\VCalendar();

@@ -8,9 +8,7 @@ use Sabre\VObject\Reader;
 
 class DateAndOrTimeTest extends TestCase
 {
-    /**
-     * @dataProvider dates
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dates')]
     public function testGetJsonValue(string $input, string $output): void
     {
         $vcard = new VObject\Component\VCard();

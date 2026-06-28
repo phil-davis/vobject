@@ -8,9 +8,7 @@ use Sabre\VObject\Reader;
 
 class VAlarmTest extends TestCase
 {
-    /**
-     * @dataProvider timeRangeTestData
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('timeRangeTestData')]
     public function testInTimeRange(VAlarm $valarm, \DateTime $start, \DateTime $end, bool $outcome): void
     {
         self::assertEquals($outcome, $valarm->isInTimeRange($start, $end));

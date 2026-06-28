@@ -11,9 +11,7 @@ class TimeZoneUtilTest extends TestCase
         TimeZoneUtil::clean();
     }
 
-    /**
-     * @dataProvider getMapping
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('getMapping')]
     public function testCorrectTZ(string $timezoneName): void
     {
         try {
@@ -163,9 +161,7 @@ HI;
         self::assertEquals($ex->getName(), $tz->getName());
     }
 
-    /**
-     * @dataProvider getPHPTimeZoneIdentifiers
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('getPHPTimeZoneIdentifiers')]
     public function testTimeZoneIdentifiers(string $tzid): void
     {
         $tz = TimeZoneUtil::getTimeZone($tzid);
@@ -174,9 +170,7 @@ HI;
         self::assertEquals($ex->getName(), $tz->getName());
     }
 
-    /**
-     * @dataProvider getPHPTimeZoneBCIdentifiers
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('getPHPTimeZoneBCIdentifiers')]
     public function testTimeZoneBCIdentifiers(string $tzid): void
     {
         /*
