@@ -2,6 +2,7 @@
 
 namespace Sabre\VObject\Parser;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Sabre\VObject\Component\VCalendar;
 use Sabre\VObject\ParseException;
@@ -109,9 +110,7 @@ VCF;
         ];
     }
 
-    /**
-     * @dataProvider provideEmptyParserInput
-     */
+    #[DataProvider('provideEmptyParserInput')]
     public function testParseEmpty($input, $expectedExceptionMessage): void
     {
         $this->expectException(ParseException::class);
@@ -188,9 +187,8 @@ EOF;
 
     /**
      * @covers \Sabre\VObject\Parser\MimeDir::readProperty
-     *
-     * @dataProvider provideBrokenVCalendar
      */
+    #[DataProvider('provideBrokenVCalendar')]
     public function testBrokenMultilineContentDoesNotBreakImportWhenSetToIgnoreBrokenLines(string $vcalendar): void
     {
         $mimeDir = new MimeDir(null, MimeDir::OPTION_IGNORE_INVALID_LINES);
@@ -201,10 +199,9 @@ EOF;
     /**
      * @covers \Sabre\VObject\Parser\MimeDir::readProperty
      *
-     * @dataProvider provideBrokenVCalendar
-     *
      * @param string $vcalendar
      */
+    #[DataProvider('provideBrokenVCalendar')]
     public function testBrokenMultilineContentDoesBreakImport($vcalendar): void
     {
         $mimeDir = new MimeDir();

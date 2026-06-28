@@ -2,6 +2,7 @@
 
 namespace Sabre\VObject;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -280,9 +281,7 @@ VCF;
         ];
     }
 
-    /**
-     * @dataProvider provideFormats
-     */
+    #[DataProvider('provideFormats')]
     public function testConvertDefaultFormats($inputFilename, $outputFilename, $format): void
     {
         $triggeredWarning = null;
