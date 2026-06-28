@@ -2,13 +2,14 @@
 
 namespace Sabre\VObject\Component;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Sabre\VObject\InvalidDataException;
 use Sabre\VObject\Reader;
 
 class VAlarmTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\DataProvider('timeRangeTestData')]
+    #[DataProvider('timeRangeTestData')]
     public function testInTimeRange(VAlarm $valarm, \DateTime $start, \DateTime $end, bool $outcome): void
     {
         self::assertEquals($outcome, $valarm->isInTimeRange($start, $end));

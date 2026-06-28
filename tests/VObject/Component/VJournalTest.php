@@ -2,12 +2,13 @@
 
 namespace Sabre\VObject\Component;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Sabre\VObject\Reader;
 
 class VJournalTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\DataProvider('timeRangeTestData')]
+    #[DataProvider('timeRangeTestData')]
     public function testInTimeRange(VJournal $vtodo, \DateTime $start, \DateTime $end, bool $outcome): void
     {
         self::assertEquals($outcome, $vtodo->isInTimeRange($start, $end));

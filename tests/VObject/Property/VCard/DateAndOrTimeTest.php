@@ -2,13 +2,14 @@
 
 namespace Sabre\VObject\Property\VCard;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Sabre\VObject;
 use Sabre\VObject\Reader;
 
 class DateAndOrTimeTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\DataProvider('dates')]
+    #[DataProvider('dates')]
     public function testGetJsonValue(string $input, string $output): void
     {
         $vcard = new VObject\Component\VCard();

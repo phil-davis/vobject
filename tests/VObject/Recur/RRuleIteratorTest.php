@@ -2,6 +2,7 @@
 
 namespace Sabre\VObject\Recur;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Sabre\VObject\InvalidDataException;
 
@@ -32,7 +33,7 @@ class RRuleIteratorTest extends TestCase
     /**
      * @param string[] $expected
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('dst2HourlyTransitionProvider')]
+    #[DataProvider('dst2HourlyTransitionProvider')]
     public function test2HourlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -91,7 +92,7 @@ class RRuleIteratorTest extends TestCase
     /**
      * @param string[] $expected
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('dst6HourlyTransitionProvider')]
+    #[DataProvider('dst6HourlyTransitionProvider')]
     public function testHourlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -283,7 +284,7 @@ class RRuleIteratorTest extends TestCase
     /**
      * @param string[] $expected
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('dstDailyTransitionProvider')]
+    #[DataProvider('dstDailyTransitionProvider')]
     public function testDailyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -491,7 +492,7 @@ class RRuleIteratorTest extends TestCase
     /**
      * @param string[] $expected
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('dstWeeklyTransitionProvider')]
+    #[DataProvider('dstWeeklyTransitionProvider')]
     public function testWeeklyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -744,7 +745,7 @@ class RRuleIteratorTest extends TestCase
     /**
      * @param string[] $expected
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('dstMonthlyTransitionProvider')]
+    #[DataProvider('dstMonthlyTransitionProvider')]
     public function testMonthlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -1154,7 +1155,7 @@ class RRuleIteratorTest extends TestCase
     /**
      * @param string[] $expected
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('dstYearlyTransitionProvider')]
+    #[DataProvider('dstYearlyTransitionProvider')]
     public function testYearlyOnDstTransition(string $start, array $expected): void
     {
         $this->parse(
@@ -1428,7 +1429,7 @@ class RRuleIteratorTest extends TestCase
      *
      * @param string[] $expected
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('yearlyStartDateNotOnRRuleListProvider')]
+    #[DataProvider('yearlyStartDateNotOnRRuleListProvider')]
     public function testYearlyStartDateNotOnRRuleList(string $rule, string $start, array $expected): void
     {
         $this->parse($rule, $start, $expected);

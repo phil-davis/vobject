@@ -2,6 +2,7 @@
 
 namespace Sabre\VObject;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class TimeZoneUtilTest extends TestCase
@@ -11,7 +12,7 @@ class TimeZoneUtilTest extends TestCase
         TimeZoneUtil::clean();
     }
 
-    #[\PHPUnit\Framework\Attributes\DataProvider('getMapping')]
+    #[DataProvider('getMapping')]
     public function testCorrectTZ(string $timezoneName): void
     {
         try {
@@ -161,7 +162,7 @@ HI;
         self::assertEquals($ex->getName(), $tz->getName());
     }
 
-    #[\PHPUnit\Framework\Attributes\DataProvider('getPHPTimeZoneIdentifiers')]
+    #[DataProvider('getPHPTimeZoneIdentifiers')]
     public function testTimeZoneIdentifiers(string $tzid): void
     {
         $tz = TimeZoneUtil::getTimeZone($tzid);
@@ -170,7 +171,7 @@ HI;
         self::assertEquals($ex->getName(), $tz->getName());
     }
 
-    #[\PHPUnit\Framework\Attributes\DataProvider('getPHPTimeZoneBCIdentifiers')]
+    #[DataProvider('getPHPTimeZoneBCIdentifiers')]
     public function testTimeZoneBCIdentifiers(string $tzid): void
     {
         /*

@@ -2,12 +2,13 @@
 
 namespace Sabre\VObject\Component;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Sabre\VObject;
 
 class VCardTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\DataProvider('validateData')]
+    #[DataProvider('validateData')]
     public function testValidate(string $input, array $expectedWarnings, string $expectedRepairedOutput): void
     {
         $vcard = VObject\Reader::read($input);

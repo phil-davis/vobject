@@ -2,6 +2,7 @@
 
 namespace Sabre\VObject;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class DateTimeParserTest extends TestCase
@@ -169,7 +170,7 @@ class DateTimeParserTest extends TestCase
     /**
      * @param array<string, int|string|null> $output
      */
-    #[\PHPUnit\Framework\Attributes\DataProvider('vcardDates')]
+    #[DataProvider('vcardDates')]
     public function testVCardDate(string $input, array $output): void
     {
         self::assertEquals(

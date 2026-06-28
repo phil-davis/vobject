@@ -2,11 +2,12 @@
 
 namespace Sabre\VObject\Property\ICalendar;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class CalAddressTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\DataProvider('values')]
+    #[DataProvider('values')]
     public function testGetNormalizedValue(string $expected, string $input): void
     {
         $vobj = new \Sabre\VObject\Component\VCalendar();
