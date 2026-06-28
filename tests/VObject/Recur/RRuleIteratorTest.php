@@ -29,6 +29,9 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
+    /**
+     * @param string[] $expected
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('dst2HourlyTransitionProvider')]
     public function test2HourlyOnDstTransition(string $start, array $expected): void
     {
@@ -85,6 +88,9 @@ class RRuleIteratorTest extends TestCase
         ];
     }
 
+    /**
+     * @param string[] $expected
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('dst6HourlyTransitionProvider')]
     public function testHourlyOnDstTransition(string $start, array $expected): void
     {
@@ -274,6 +280,9 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
+    /**
+     * @param string[] $expected
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('dstDailyTransitionProvider')]
     public function testDailyOnDstTransition(string $start, array $expected): void
     {
@@ -479,6 +488,9 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
+    /**
+     * @param string[] $expected
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('dstWeeklyTransitionProvider')]
     public function testWeeklyOnDstTransition(string $start, array $expected): void
     {
@@ -729,6 +741,9 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
+    /**
+     * @param string[] $expected
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('dstMonthlyTransitionProvider')]
     public function testMonthlyOnDstTransition(string $start, array $expected): void
     {
@@ -1136,6 +1151,9 @@ class RRuleIteratorTest extends TestCase
         );
     }
 
+    /**
+     * @param string[] $expected
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('dstYearlyTransitionProvider')]
     public function testYearlyOnDstTransition(string $start, array $expected): void
     {
@@ -1407,6 +1425,8 @@ class RRuleIteratorTest extends TestCase
     /**
      * This caused an incorrect date to be returned by the rule iterator when
      * start date was not on the rrule list.
+     *
+     * @param string[] $expected
      */
     #[\PHPUnit\Framework\Attributes\DataProvider('yearlyStartDateNotOnRRuleListProvider')]
     public function testYearlyStartDateNotOnRRuleList(string $rule, string $start, array $expected): void

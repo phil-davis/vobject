@@ -458,6 +458,9 @@ class ComponentTest extends TestCase
         $comp->remove($prop);
     }
 
+    /**
+     * @param string[] $componentList
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('ruleData')]
     public function testValidateRules(array $componentList, int $errorCount): void
     {

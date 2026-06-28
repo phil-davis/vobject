@@ -166,6 +166,9 @@ class DateTimeParserTest extends TestCase
         DateTimeParser::parseDate('20101331');
     }
 
+    /**
+     * @param array<string, int|string|null> $output
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider('vcardDates')]
     public function testVCardDate(string $input, array $output): void
     {
