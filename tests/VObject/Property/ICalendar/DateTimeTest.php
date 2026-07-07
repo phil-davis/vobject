@@ -347,7 +347,9 @@ class DateTimeTest extends TestCase
         ];
     }
 
-    #[DataProvider('validateDateTimeProvider')]
+    /**
+     * @dataProvider validateDateTimeProvider
+     */
     public function testValidate(string $invalidDateTime, int $expectedMessageCount, int $expectedMessageLevel): void
     {
         $exDate = $this->vcal->createProperty('EXDATE', $invalidDateTime);
